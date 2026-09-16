@@ -1,0 +1,67 @@
+SQL> SELECT * FROM Category;
+
+CATEGORY_ID | CATEGORY_NAME        | DESCRIPTION
+----------- | -------------------- | ----------------------------------------
+          1 | Men                  | Fashion products for men
+          2 | Women                | Fashion products for women
+          3 | Kids                 | Fashion products for kids
+          4 | Footwear             | Shoes and sandals
+          5 | Accessories          | Fashion accessories
+
+
+SQL> SELECT * FROM Product;
+
+PRODUCT_ID | PRODUCT_NAME                                         | CATEGORY_ID |      PRICE | STOCK_QUANTITY
+---------- | ---------------------------------------------------------------------------------------------------- | ----------- | ---------- | --------------
+       101 | Cotton Shirt                                         |           1 |        799 |   25
+       102 | Denim Jeans                                         |           1 |       1299 |   15
+       103 | Floral Kurti                                         |           2 |        999 |   20
+       104 | Kids T-Shirt                                         |           3 |        499 |   30
+       105 | Running Shoes                                         |           4 |       1999 |   10
+       106 | Leather Belt                                         |           5 |        599 |   18
+
+6 rows selected.
+
+SQL> UPDATE Product
+  2  SET Price = 899.00
+  3  WHERE Product_ID = 101;
+
+1 row updated.
+
+SQL> UPDATE Product
+  2  SET Stock_Quantity = 35
+  3  WHERE Product_ID = 104;
+
+1 row updated.
+
+
+SQL> DELETE FROM Product
+  2  WHERE Product_ID = 106;
+
+1 row deleted.
+
+SQL> DELETE FROM Product
+  2  WHERE Product_ID = 105;
+
+1 row deleted.
+
+
+CATEGORY_NAME        | PRODUCT_NAME                                         |       PRICE | STOCK_QUANTITY
+-------------------- | ---------------------------------------------------------------------------------------------------- | ---------- | --------------
+Kids                 | Kids T-Shirt                                         |         499 |             35
+Men                  | Cotton Shirt                                         |         899 |             25
+Men                  | Denim Jeans                                          |        1299 |             15
+Women                | Floral Kurti                                         |         999 |             20
+
+PRODUCT_ID | PRODUCT_NAME                                                 |       PRICE | STOCK_QUANTITY
+---------- | -------------------------------------------------------------------------------------------
+       103 | Floral Kurti                                                 |         999 |             20
+
+
+CATEGORY_NAME        | PRODUCT_COUNT
+-------------------- | -------------
+Men                  |             2
+Women                |             1
+Kids                 |             1
+Footwear             |             0
+Accessories          |             0

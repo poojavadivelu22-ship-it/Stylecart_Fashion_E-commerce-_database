@@ -1,0 +1,256 @@
+SELLER_ID SELLER_NAME                              CONTACT_NUMBER
+---------- -------------------------------------------------- ---------------
+EMAIL
+--------------------------------------------------------------------------------
+ADDRESS
+--------------------------------------------------------------------------------
+       101 Trendy Fashions                          9876543210
+trendy@gmail.com
+Chennai
+
+       102 Fashion Hub                              9876543211
+fashionhub@gmail.com
+Bangalore
+
+ SELLER_ID SELLER_NAME                              CONTACT_NUMBER
+---------- -------------------------------------------------- ---------------
+EMAIL
+--------------------------------------------------------------------------------
+ADDRESS
+--------------------------------------------------------------------------------
+
+       103 Style World                              9876543212
+styleworld@gmail.com
+Coimbatore
+
+       104 Urban Wear                               9876543213
+urbanwear@gmail.com
+
+ SELLER_ID SELLER_NAME                              CONTACT_NUMBER
+---------- -------------------------------------------------- ---------------
+EMAIL
+--------------------------------------------------------------------------------
+ADDRESS
+--------------------------------------------------------------------------------
+Hyderabad
+
+       105 Classic Styles                           9876543214
+classic@gmail.com
+Mumbai
+
+
+SQL> SELECT
+  2      i.Inventory_ID,
+  3      p.Product_Name,
+  4      s.Seller_Name,
+  5      i.Stock_Quantity,
+  6      i.Stock_Status
+  7  FROM Inventory i
+  8  JOIN Product p
+  9  ON i.Product_ID = p.Product_ID
+ 10  JOIN Seller s
+ 11  ON i.Seller_ID = s.Seller_ID;
+
+INVENTORY_ID
+------------
+PRODUCT_NAME
+--------------------------------------------------------------------------------
+SELLER_NAME                                      STOCK_QUANTITY
+-------------------------------------------------- --------------
+STOCK_STATUS
+--------------------
+           1
+cotton T-shirt
+Trendy Fashions                                      50
+Available
+
+
+INVENTORY_ID
+------------
+PRODUCT_NAME
+--------------------------------------------------------------------------------
+SELLER_NAME                                      STOCK_QUANTITY
+-------------------------------------------------- --------------
+STOCK_STATUS
+--------------------
+           2
+Denim jeans
+Fashion Hub                                          30
+Available
+
+
+INVENTORY_ID
+------------
+PRODUCT_NAME
+--------------------------------------------------------------------------------
+SELLER_NAME                                      STOCK_QUANTITY
+-------------------------------------------------- --------------
+STOCK_STATUS
+--------------------
+           3
+Floral Dress
+Style World                                   0
+Unavailable
+
+
+INVENTORY_ID
+------------
+PRODUCT_NAME
+--------------------------------------------------------------------------------
+SELLER_NAME                                      STOCK_QUANTITY
+-------------------------------------------------- --------------
+STOCK_STATUS
+--------------------
+           4
+Casual Shirt
+Urban Wear                                           25
+Available
+
+
+INVENTORY_ID
+------------
+PRODUCT_NAME
+--------------------------------------------------------------------------------
+SELLER_NAME                                      STOCK_QUANTITY
+-------------------------------------------------- --------------
+STOCK_STATUS
+--------------------
+           5
+Hoodie
+Classic Styles                                0
+Unavailable
+
+
+SQL> SELECT
+  2      i.Inventory_ID,
+  3      p.Product_Name,
+  4      i.Stock_Quantity,
+  5      i.Stock_Status
+  6  FROM Inventory i
+  7  JOIN Product p
+  8  ON i.Product_ID = p.Product_ID
+  9  WHERE i.Stock_Status = 'Available';
+
+INVENTORY_ID
+------------
+PRODUCT_NAME
+--------------------------------------------------------------------------------
+STOCK_QUANTITY STOCK_STATUS
+-------------- --------------------
+           1
+cotton T-shirt
+            50 Available
+
+           2
+Denim jeans
+            30 Available
+
+INVENTORY_ID
+------------
+PRODUCT_NAME
+--------------------------------------------------------------------------------
+STOCK_QUANTITY STOCK_STATUS
+-------------- --------------------
+
+           4
+Casual Shirt
+            25 Available
+
+
+SQL> SELECT
+  2      i.Inventory_ID,
+  3      p.Product_Name,
+  4      i.Stock_Quantity,
+  5      i.Stock_Status
+  6  FROM Inventory i
+  7  JOIN Product p
+  8  ON i.Product_ID = p.Product_ID
+  9  WHERE i.Stock_Status = 'Unavailable';
+
+INVENTORY_ID
+------------
+PRODUCT_NAME
+--------------------------------------------------------------------------------
+STOCK_QUANTITY STOCK_STATUS
+-------------- --------------------
+           3
+Floral Dress
+             0 Unavailable
+
+           5
+Hoodie
+             0 Unavailable
+
+INVENTORY_ID
+------------
+PRODUCT_NAME
+--------------------------------------------------------------------------------
+STOCK_QUANTITY STOCK_STATUS
+-------------- --------------------
+
+
+
+
+
+INVENTORY_ID PRODUCT_ID  SELLER_ID STOCK_QUANTITY STOCK_STATUS
+------------ ---------- ---------- -------------- --------------------
+           1          1        101             50 Available
+           2          2        102             30 Available
+           3          3        103            0 Unavailable
+           4          4        104             25 Available
+           5          5        105            0 Unavailable
+
+
+
+PRODUCT_ID
+----------
+PRODUCT_NAME
+--------------------------------------------------------------------------------
+     PRICE      STOCK CATEGORY
+---------- ---------- --------------------------------------------------
+         1
+cotton T-shirt
+       599         50 Men
+
+         2
+Denim jeans
+       999         30 Women
+
+PRODUCT_ID
+----------
+PRODUCT_NAME
+--------------------------------------------------------------------------------
+     PRICE      STOCK CATEGORY
+---------- ---------- --------------------------------------------------
+
+         3
+Floral Dress
+       799         20 Women
+
+         4
+Casual Shirt
+
+PRODUCT_ID
+----------
+PRODUCT_NAME
+--------------------------------------------------------------------------------
+     PRICE      STOCK CATEGORY
+---------- ---------- --------------------------------------------------
+       699         25 men
+
+         5
+Hoodie
+       899         40 Unisex
+
+
+ UPDATE Inventory
+    SET Stock_Quantity = 20,
+    Stock_Status = 'Available'
+    WHERE Inventory_ID = 3;
+
+1 row updated.
+
+INVENTORY_ID PRODUCT_ID  SELLER_ID STOCK_QUANTITY STOCK_STATUS
+------------ ---------- ---------- -------------- --------------------
+           3          3        103             20 Available
+

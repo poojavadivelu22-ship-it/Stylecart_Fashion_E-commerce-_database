@@ -1,0 +1,77 @@
+ORDER_ID CUSTOMER_ID ORDER_DAT TOTAL_AMOUNT ORDER_STATUS
+---------- ----------- --------- ------------ --------------------
+SHIPPING_ADDRESS
+--------------------------------------------------------------------------------
+      1001           1 24-SEP-26         1898 Placed
+Chennai
+
+      1002           2 24-SEP-26         1599 Shipped
+Madurai
+
+      1003           3 24-SEP-26          899 Delivered
+Coimbatore
+
+ORDER_ITEM_ID   ORDER_ID PRODUCT_ID   QUANTITY UNIT_PRICE   SUBTOTAL
+------------- ---------- ---------- ---------- ---------- ----------
+            1       1001        101          1        599        599
+            2       1001        102          1       1299       1299
+            3       1002        105          1       1599       1599
+            4       1003        103          1        899        899
+
+            ORDER_ID TOTAL_AMOUNT
+---------- ------------
+      1001         2098
+
+      ORDER_ID CUSTOMER_ID ORDER_DAT TOTAL_AMOUNT ORDER_STATUS
+---------- ----------- --------- ------------ --------------------
+SHIPPING_ADDRESS
+--------------------------------------------------------------------------------
+      1001           1 24-SEP-26         2098 Shipped
+Chennai
+
+ORDER_ITEM_ID   ORDER_ID PRODUCT_ID   QUANTITY UNIT_PRICE   SUBTOTAL
+------------- ---------- ---------- ---------- ---------- ----------
+            1       1001        101          2        599       1198
+
+            CUSTOMER_ID   ORDER_ID ORDER_DAT ORDER_STATUS
+----------- ---------- --------- --------------------
+SHIPPING_ADDRESS
+--------------------------------------------------------------------------------
+PRODUCT_ID   QUANTITY UNIT_PRICE   SUBTOTAL
+---------- ---------- ---------- ----------
+          1       1001 24-SEP-26 Shipped
+Chennai
+       101          2        599       1198
+
+          1       1001 24-SEP-26 Shipped
+Chennai
+       102          1       1299       1299
+
+CUSTOMER_ID   ORDER_ID ORDER_DAT ORDER_STATUS
+----------- ---------- --------- --------------------
+SHIPPING_ADDRESS
+--------------------------------------------------------------------------------
+PRODUCT_ID   QUANTITY UNIT_PRICE   SUBTOTAL
+---------- ---------- ---------- ----------
+
+          2       1002 24-SEP-26 Shipped
+Madurai
+       105          1       1599       1599
+
+          3       1003 24-SEP-26 Delivered
+Coimbatore
+
+CUSTOMER_ID   ORDER_ID ORDER_DAT ORDER_STATUS
+----------- ---------- --------- --------------------
+SHIPPING_ADDRESS
+--------------------------------------------------------------------------------
+PRODUCT_ID   QUANTITY UNIT_PRICE   SUBTOTAL
+---------- ---------- ---------- ----------
+       103          1        899        899
+
+       CUSTOMER_ID TOTAL_ORDERS TOTAL_AMOUNT
+----------- ------------ ------------
+          1            1         2497
+          2            1         1599
+          3            1          899
+

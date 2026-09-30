@@ -1,0 +1,71 @@
+
+PAYMENT_ID   ORDER_ID PAYMENT_METHOD                 PAYMENT_D
+---------- ---------- ------------------------------ ---------
+PAYMENT_STATUS       AMOUNT_PAID
+-------------------- -----------
+       501       1001 UPI                            30-SEP-26
+Successful                  2098
+
+       502       1002 Credit Card                    30-SEP-26
+Successful                  1599
+
+       503       1003 Debit Card                     30-SEP-26
+Failed
+
+
+PAYMENT_ID   ORDER_ID PAYMENT_METHOD                 PAYMENT_D
+---------- ---------- ------------------------------ ---------
+PAYMENT_STATUS       AMOUNT_PAID
+-------------------- -----------
+       501       1001 UPI                            30-SEP-26
+Successful                  2098
+
+       502       1002 Credit Card                    30-SEP-26
+Successful                  1599
+
+
+PAYMENT_ID   ORDER_ID PAYMENT_METHOD                 PAYMENT_D
+---------- ---------- ------------------------------ ---------
+PAYMENT_STATUS       AMOUNT_PAID
+-------------------- -----------
+       503       1003 Debit Card                     30-SEP-26
+Failed                       899
+
+
+1 row updated.
+
+
+PAYMENT_ID   ORDER_ID PAYMENT_METHOD                 PAYMENT_D
+---------- ---------- ------------------------------ ---------
+PAYMENT_STATUS       AMOUNT_PAID
+-------------------- -----------
+       503       1003 Debit Card                     30-SEP-26
+Successful                   899
+
+
+PAYMENT_METHOD                 TOTAL_TRANSACTIONS
+------------------------------ ------------------
+UPI                                             1
+Debit Card                                      1
+Credit Card                                     1
+
+
+PAYMENT_METHOD                 TOTAL_AMOUNT_COLLECTED
+------------------------------ ----------------------
+UPI                                              2098
+Credit Card                                      1599
+Debit Card                                        899
+
+
+PAYMENT_ID   ORDER_ID PAYMENT_METHOD                 PAYMENT_D
+---------- ---------- ------------------------------ ---------
+PAYMENT_STATUS       AMOUNT_PAID
+-------------------- -----------
+       501       1001 UPI                            30-SEP-26
+Successful                  2098
+
+       503       1003 Debit Card                     30-SEP-26
+Successful                   899
+
+       502       1002 Credit Card                    30-SEP-26
+Successful                  1599

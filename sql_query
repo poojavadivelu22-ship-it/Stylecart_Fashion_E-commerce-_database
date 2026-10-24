@@ -1,0 +1,44 @@
+SELECT *
+FROM Customer;
+SELECT *
+FROM Customer
+WHERE Age > 19;
+SELECT *
+FROM Customer
+ORDER BY Customer_Name ASC;
+SELECT DISTINCT City
+FROM Customer;
+SELECT Product_ID, Product_Name, Price
+FROM Product
+WHERE Price > 1000;
+SELECT Product_ID, Product_Name, Category_ID
+FROM Product
+WHERE Category_ID = 1;
+SELECT Product_ID, Product_Name, Price, Stock_Quantity
+FROM Product
+WHERE Stock_Quantity > 0;
+SELECT Customer_ID, Customer_Name
+FROM Customer;
+SELECT Product_ID, Product_Name, Category_ID, Price,
+       Stock_Quantity
+FROM Product;
+DESC Customer;
+DESC Product;
+SELECT Product_ID, Product_Name, Price
+FROM Product
+WHERE Price BETWEEN 500 AND 2000;
+SELECT Product_ID, Product_Name, Price, Stock_Quantity
+FROM Product
+WHERE Price < 1500
+AND Stock_Quantity > 0;
+SELECT *
+FROM Customer
+WHERE Customer_Name = 'Arun';
+SELECT COUNT(*) AS Total_Customers
+FROM Customer;
+SELECT ROUND(AVG(Salary), 2) AS Average_Customer_Salary
+FROM Customer;
+SELECT MAX(Price) AS Highest_Product_Price
+FROM Product;
+SELECT COUNT(*) AS Total_Products
+FROM Product;

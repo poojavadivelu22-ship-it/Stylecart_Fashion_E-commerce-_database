@@ -1,0 +1,102 @@
+SELECT COUNT(*) AS TOTAL_ORDERS
+FROM Orders;
+SELECT SUM(Total_Amount) AS TOTAL_SALES
+FROM Orders;
+SELECT ROUND(AVG(Total_Amount), 2) AS AVERAGE_SALES
+FROM Orders;
+SELECT MIN(Total_Amount) AS MINIMUM_SALES
+FROM Orders;
+SELECT MAX(Total_Amount) AS MAXIMUM_SALES
+FROM Orders;
+SELECT
+    COUNT(Order_ID) AS TOTAL_ORDERS,
+    SUM(Total_Amount) AS TOTAL_SALES,
+    ROUND(AVG(Total_Amount), 2) AS AVERAGE_SALES,
+    MIN(Total_Amount) AS MINIMUM_SALES,
+    MAX(Total_Amount) AS MAXIMUM_SALES
+FROM Orders;
+SELECT
+    c.Customer_ID,
+    c.First_Name,
+    c.Last_Name,
+    COUNT(o.Order_ID) AS TOTAL_ORDERS,
+    SUM(o.Total_Amount) AS TOTAL_PURCHASE
+FROM Customer c
+JOIN Orders o
+ON c.Customer_ID = o.Customer_ID
+GROUP BY
+    c.Customer_ID,
+    c.First_Name,
+    c.Last_Name
+ORDER BY TOTAL_PURCHASE DESC;
+SELECT *
+FROM
+(
+    SELECT
+        c.Customer_ID,
+        c.First_Name,
+        c.Last_Name,
+        SUM(o.Total_Amount) AS TOTAL_PURCHASE
+    FROM Customer c
+    JOIN Orders o
+    ON c.Customer_ID = o.Customer_ID
+    GROUP BY
+        c.Customer_ID,
+        c.First_Name,
+        c.Last_Name
+    ORDER BY TOTAL_PURCHASE DESC
+)
+WHERE ROWNUM <= 3;
+SELECT
+    p.Product_ID,
+    p.Product_Name,
+    SUM(oi.Quantity) AS TOTAL_QUANTITY_SOLD
+FROM Product p
+JOIN Order_Item oi
+ON p.Product_ID = oi.Product_ID
+GROUP BY
+    p.Product_ID,
+    p.Product_Name
+ORDER BY TOTAL_QUANTITY_SOLD DESC;
+SELECT
+    p.Product_ID,
+    p.Product_Name,
+    SUM(oi.Quantity) AS TOTAL_QUANTITY,
+    SUM(oi.Subtotal) AS TOTAL_SALES
+FROM Product p
+JOIN Order_Item oi
+ON p.Product_ID = oi.Product_ID
+GROUP BY
+    p.Product_ID,
+    p.Product_Name
+ORDER BY TOTAL_SALES DESC;
+SELECT
+    c.Category_ID,
+    c.Category_Name,
+    SUM(oi.Quantity) AS TOTAL_QUANTITY_SOLD,
+    SUM(oi.Subtotal) AS TOTAL_SALES
+FROM Category c
+JOIN Product p
+ON c.Category_ID = p.Category_ID
+JOIN Order_Item oi
+ON p.Product_ID = oi.Product_ID
+GROUP BY
+    c.Category_ID,
+    c.Category_Name
+ORDER BY TOTAL_SALES DESC;
+SELECT
+    (SELECT COUNT(*)
+     FROM Orders) AS TOTAL_ORDERS,
+
+    (SELECT NVL(SUM(Total_Amount), 0)
+     FROM Orders) AS TOTAL_SALES,
+
+    (SELECT NVL(ROUND(AVG(Total_Amount), 2), 0)
+     FROM Orders) AS AVERAGE_SALES,
+
+    (SELECT COUNT(*)
+     FROM Customer) AS TOTAL_CUSTOMERS,
+
+    (SELECT COUNT(*)
+     FROM Product) AS TOTAL_PRODUCTS
+FROM DUAL;

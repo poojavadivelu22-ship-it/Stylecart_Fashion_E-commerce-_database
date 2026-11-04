@@ -1,0 +1,132 @@
+TOTAL_ORDERS
+------------
+           6
+
+TOTAL_SALES
+-----------
+      12500
+
+AVERAGE_SALES
+-------------
+      2083.33  
+
+MINIMUM_SALES
+-------------
+         1500
+
+MAXIMUM_SALES
+-------------
+         3000 
+
+TOTAL_ORDERS TOTAL_SALES AVERAGE_SALES MINIMUM_SALES MAXIMUM_SALES
+------------ ----------- ------------- ------------- -------------
+           6       12500       2083.33          1500          3000
+
+CUSTOMER_ID FIRST_NAME                     LAST_NAME
+----------- ------------------------------ ------------------------------
+TOTAL_ORDERS TOTAL_PURCHASE
+------------ --------------
+          1 Arun                           Kumar
+           2           3200
+
+          3 Karthik                        Raja
+           1           3000
+
+          5 Vijay                          Raj
+           1           2500
+
+
+CUSTOMER_ID FIRST_NAME                     LAST_NAME
+----------- ------------------------------ ------------------------------
+TOTAL_ORDERS TOTAL_PURCHASE
+------------ --------------
+          2 Priya                          Devi
+           1           2000
+
+          4 Divya                          Sri
+           1           1800
+
+CUSTOMER_ID FIRST_NAME                     LAST_NAME
+----------- ------------------------------ ------------------------------
+TOTAL_PURCHASE
+--------------
+          1 Arun                           Kumar
+          3200
+
+          3 Karthik                        Raja
+          3000
+
+          5 Vijay                          Raj
+          2500
+
+PRODUCT_ID PRODUCT_NAME
+---------- --------------------------------------------------
+TOTAL_QUANTITY_SOLD
+-------------------
+       204 Shoes
+                  3
+
+       206 Kurti
+                  2
+
+       201 T-Shirt
+                  2
+
+
+PRODUCT_ID PRODUCT_NAME
+---------- --------------------------------------------------
+TOTAL_QUANTITY_SOLD
+-------------------
+       205 Handbag
+                  2
+
+       202 Jeans
+                  1
+
+       203 Saree
+                  1
+
+
+6 rows selected.
+
+PRODUCT_ID PRODUCT_NAME                                       TOTAL_QUANTITY
+---------- -------------------------------------------------- --------------
+TOTAL_SALES
+-----------
+       204 Shoes                                                           3
+       4500
+
+       203 Saree                                                           1
+       2000
+
+       205 Handbag                                                         2
+       2000
+
+
+PRODUCT_ID PRODUCT_NAME                                       TOTAL_QUANTITY
+---------- -------------------------------------------------- --------------
+TOTAL_SALES
+-----------
+       206 Kurti                                                           2
+       1600
+
+       201 T-Shirt                                                         2
+       1200
+
+       202 Jeans                                                           1
+       1200
+
+
+6 rows selected.
+
+CATEGORY_ID CATEGORY_NAME                  TOTAL_QUANTITY_SOLD TOTAL_SALES
+----------- ------------------------------ ------------------- -----------
+        103 Footwear                                         3        4500
+        102 Womens Wear                                      3        3600
+        101 Mens Wear                                        3        2400
+        104 Accessories                                      2        2000
+
+TOTAL_ORDERS TOTAL_SALES AVERAGE_SALES TOTAL_CUSTOMERS TOTAL_PRODUCTS
+------------ ----------- ------------- --------------- --------------
+           6       12500       2083.33               5              6        
+
